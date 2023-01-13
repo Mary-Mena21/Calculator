@@ -1,79 +1,84 @@
-﻿// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
-do
+﻿internal class Program
 {
-    double num1 = 0;
-    double num2 = 0;
-    double result = 0;
-
-    while ((num1 <= 0) && (num1 <= 0))
+    public static void Main(string[] args)
     {
-        try
+        //Console.WriteLine("Hello, World!");
+        do
         {
-            Console.Write("inter number 1:");
-            num1 = Convert.ToDouble(Console.ReadLine());
+            double num1 = 0;
+            double num2 = 0;
+            double result = 0;
 
-            Console.Write("inter number 2:");
-            num2 = Convert.ToDouble(Console.ReadLine());
+            while (num1 <= 0 && num1 <= 0)
+            {
+                try
+                {
+                    Console.Write("inter number 1:");
+                    num1 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter an option:");
-            Console.WriteLine("+ : Add");
-            Console.WriteLine("- : Subtract");
-            Console.WriteLine("* : Multiply");
-            Console.WriteLine("/ : Divide");
+                    Console.Write("inter number 2:");
+                    num2 = Convert.ToDouble(Console.ReadLine());
+
+                    Console.WriteLine("Enter an option:");
+                    Console.WriteLine("+ : Add");
+                    Console.WriteLine("- : Subtract");
+                    Console.WriteLine("* : Multiply");
+                    Console.WriteLine("/ : Divide");
 
 
-        }
-        catch (Exception)
-        //catch (Exception e)
-        {
-            //throw new Exception(e.Message);
-            Console.WriteLine();
-            Console.WriteLine("Please enter a valid number");
+                }
+                catch (Exception)
+                //catch (Exception e)
+                {
+                    //throw new Exception(e.Message);
+                    Console.WriteLine();
+                    Console.WriteLine("Please enter a valid number");
 
-        }
+                }
 
+            }
+
+
+
+
+            switch (Console.ReadLine())
+            {
+                case "+":
+                    result = num1 + num2;
+                    Console.WriteLine("Sum result:{0}+{1}={2}", num1, num2, result);
+                    //Console.WriteLine($"Sum result: {num1} + {num2} = {result}");
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    Console.WriteLine("Subtract result:{0}-{1}={2}", num1, num2, result);
+                    //Console.WriteLine($"Subtract result: {num1} - {num2} = {result}");
+                    break;
+                case "*":
+                    result = num1 + num2;
+                    Console.WriteLine("Multiply result:{0}*{1}={2}", num1, num2, result);
+                    //Console.WriteLine($"Multiply result: {num1} * {num2} = {result}");
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    Console.WriteLine("Divide result:{0}/{1}={2}", num1, num2, result);
+                    //Console.WriteLine($"Divide result: {num1} / {num2} = {result}");
+                    break;
+                default:
+                    Console.WriteLine("Inter valid option!");
+                    break;
+            }
+
+
+            Console.WriteLine("Would you like to continue? (Y = Yes, N = No): ");
+        } while (Console.ReadLine().ToUpper() == "Y");
+
+        Console.WriteLine("Goodbye!");
+
+
+
+        Console.ReadKey();
     }
-
-
-
-
-    switch (Console.ReadLine())
-    {
-        case "+":
-            result = num1 + num2;
-            Console.WriteLine("Sum result:{0}+{1}={2}", num1, num2, result);
-            //Console.WriteLine($"Sum result: {num1} + {num2} = {result}");
-            break;
-        case "-":
-            result = num1 - num2;
-            Console.WriteLine("Subtract result:{0}-{1}={2}", num1, num2, result);
-            //Console.WriteLine($"Subtract result: {num1} - {num2} = {result}");
-            break;
-        case "*":
-            result = num1 + num2;
-            Console.WriteLine("Multiply result:{0}*{1}={2}", num1, num2, result);
-            //Console.WriteLine($"Multiply result: {num1} * {num2} = {result}");
-            break;
-        case "/":
-            result = num1 / num2;
-            Console.WriteLine("Divide result:{0}/{1}={2}", num1, num2, result);
-            //Console.WriteLine($"Divide result: {num1} / {num2} = {result}");
-            break;
-        default:
-            Console.WriteLine("Inter valid option!");
-            break;
-    }
-
-
-    Console.WriteLine("Would you like to continue? (Y = Yes, N = No): ");
-} while (Console.ReadLine().ToUpper() == "Y"); 
-
-    Console.WriteLine("Goodbye!"); 
-
-
-
-Console.ReadKey();
+}
 
 /*---------------StringBuilder-----------------*/
 //using System.Text;
